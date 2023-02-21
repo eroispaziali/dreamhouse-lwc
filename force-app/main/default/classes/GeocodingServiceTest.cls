@@ -1,5 +1,6 @@
 @isTest
 private with sharing class GeocodingServiceTest {
+
     private static final String STREET = 'Camino del Jueves 26';
     private static final String CITY = 'Armilla';
     private static final String POSTAL_CODE = '18100';
@@ -9,7 +10,7 @@ private with sharing class GeocodingServiceTest {
     private static final Decimal LONGITUDE = 31.333;
 
 
-    
+
 
     @isTest
     static void successResponse() {
@@ -82,6 +83,7 @@ private with sharing class GeocodingServiceTest {
         Assert.isNull(computedCoordinates[0].lon);
     }
 
+
     public class OpenStreetMapHttpCalloutMockImpl implements HttpCalloutMock {
         public HTTPResponse respond(HTTPRequest req) {
             HttpResponse res = new HttpResponse();
@@ -92,6 +94,7 @@ private with sharing class GeocodingServiceTest {
         }
     }
 
+    
     public class OpenStreetMapHttpCalloutMockImplError implements HttpCalloutMock {
         public HTTPResponse respond(HTTPRequest req) {
             HttpResponse res = new HttpResponse();
@@ -100,4 +103,6 @@ private with sharing class GeocodingServiceTest {
             return res;
         }
     }
+    
+
 }
