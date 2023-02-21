@@ -1,4 +1,4 @@
-public class GeocodingService {
+public inherited sharing class GeocodingService {
     
     private static final String BASE_URL = 'https://nominatim.openstreetmap.org/search?format=json';
 
