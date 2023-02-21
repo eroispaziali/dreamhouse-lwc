@@ -8,7 +8,7 @@ public class FileUtilities {
     ) {
         try {
 
-            // let's say Ive added some cool new logic to this class
+            /* Some powerful improvements */
 
             ContentVersion contentVersion = new ContentVersion();
             contentVersion.VersionData = EncodingUtil.base64Decode(base64data);
