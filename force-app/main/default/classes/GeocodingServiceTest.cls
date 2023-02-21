@@ -32,9 +32,9 @@ private with sharing class GeocodingServiceTest {
         );
 
         // THEN
-        Assert.areEqual(1, computedCoordinates.size());
-        Assert.areEqual(LATITUDE, computedCoordinates[0].lat);
-        Assert.areEqual(LONGITUDE, computedCoordinates[0].lon);
+        Assert.areEqual(1, computedCoordinates.size(), 'Asserts that the number of coordinates is equal to 1.');
+        Assert.areEqual(LATITUDE, computedCoordinates[0].lat, 'Assert that the latitude and longitude are equal.');
+        Assert.areEqual(LONGITUDE, computedCoordinates[0].lon, 'Asserts that the longitude of the first coordinate is equal to the longitude of the first coordinate.');
     }
     @isTest
     static void blankAddress() {
@@ -52,9 +52,9 @@ private with sharing class GeocodingServiceTest {
         );
 
         // THEN
-        Assert.areEqual(1, computedCoordinates.size());
-        Assert.isNull(computedCoordinates[0].lat);
-        Assert.isNull(computedCoordinates[0].lon);
+        Assert.areEqual(1, computedCoordinates.size(), 'Asserts that the number of coordinates is equal to 1.');
+        Assert.isNull(computedCoordinates[0].lat, 'Assert that the first coordinate is null.');
+        Assert.isNull(computedCoordinates[0].lon, 'Assert that the first coordinate is null.');
     }
     @isTest
     static void errorResponse() {
@@ -77,9 +77,9 @@ private with sharing class GeocodingServiceTest {
         );
 
         // THEN
-        Assert.areEqual(1, computedCoordinates.size());
-        Assert.isNull(computedCoordinates[0].lat);
-        Assert.isNull(computedCoordinates[0].lon);
+        Assert.areEqual(1, computedCoordinates.size(), 'Asserts that the number of coordinates is equal to 1.');
+        Assert.isNull(computedCoordinates[0].lat, 'Assert that the first coordinate is null.');
+        Assert.isNull(computedCoordinates[0].lon, 'Assert that the first coordinate is null.');
     }
 
     public class OpenStreetMapHttpCalloutMockImpl implements HttpCalloutMock {
