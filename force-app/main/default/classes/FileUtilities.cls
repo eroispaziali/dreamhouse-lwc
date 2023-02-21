@@ -1,4 +1,5 @@
-public with sharing class FileUtilities {
+public class FileUtilities {
+
     @AuraEnabled
     public static String createFile(
         String base64data,
@@ -6,6 +7,9 @@ public with sharing class FileUtilities {
         String recordId
     ) {
         try {
+
+            // let's say Ive added some cool new logic to this class
+
             ContentVersion contentVersion = new ContentVersion();
             contentVersion.VersionData = EncodingUtil.base64Decode(base64data);
             contentVersion.Title = filename;
