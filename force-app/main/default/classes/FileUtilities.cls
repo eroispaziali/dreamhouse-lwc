@@ -1,10 +1,9 @@
 public with sharing class FileUtilities {
+
+    
+
     @AuraEnabled
-    public static String createFile(
-        String base64data,
-        String filename,
-        String recordId
-    ) {
+    public static String createFile(String base64data, String filename, String recordId) {
         try {
             ContentVersion contentVersion = new ContentVersion();
             contentVersion.VersionData = EncodingUtil.base64Decode(base64data);
@@ -30,4 +29,5 @@ public with sharing class FileUtilities {
             throw new AuraHandledException('Error creating file: ' + e);
         }
     }
+
 }
