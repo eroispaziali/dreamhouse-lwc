@@ -7,7 +7,7 @@ public inherited sharing class GeocodingService {
         List<GeocodingAddress> addresses
     ) {
         List<Coordinates> computedCoordinates = new List<Coordinates>();
-        List<Contact> contacts = contentVersion = [SELECT Id, Name FROM Contact LIMIT 10];
+        List<Contact> contacts = [SELECT Id, Name FROM Contact LIMIT 10];
 
         for (GeocodingAddress address : addresses) {
             String geocodingUrl = BASE_URL;
