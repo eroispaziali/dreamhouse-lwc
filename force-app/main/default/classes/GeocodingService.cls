@@ -1,4 +1,5 @@
-public with sharing class GeocodingService {
+public inherited sharing class GeocodingService {
+    
     private static final String BASE_URL = 'https://nominatim.openstreetmap.org/search?format=json';
 
     @InvocableMethod(callout=true label='Geocode address')
@@ -6,6 +7,7 @@ public with sharing class GeocodingService {
         List<GeocodingAddress> addresses
     ) {
         List<Coordinates> computedCoordinates = new List<Coordinates>();
+        List<Contact> contacts = [SELECT Id, Name FROM Contact LIMIT 10];
 
         for (GeocodingAddress address : addresses) {
             String geocodingUrl = BASE_URL;
